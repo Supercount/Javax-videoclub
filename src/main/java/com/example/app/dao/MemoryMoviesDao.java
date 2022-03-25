@@ -3,7 +3,10 @@ package com.example.app.dao;
 import com.example.app.dao.base.MovieDao;
 import com.example.app.dao.entity.Movie;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class MemoryMoviesDao implements MovieDao {
