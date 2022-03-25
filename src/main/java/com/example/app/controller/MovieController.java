@@ -1,8 +1,8 @@
 package com.example.app.controller;
 
+import com.example.app.controller.model.CreateMovie;
 import com.example.app.dao.DaoFactory;
 import com.example.app.dao.base.MovieDao;
-import com.example.app.controller.model.CreateMovie;
 import com.example.app.dao.entity.Movie;
 
 import javax.ws.rs.*;

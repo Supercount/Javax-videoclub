@@ -20,4 +20,8 @@ public final class DaoFactory {
         return new MemoryUserDao();
 
     }
+
+    public static ProductDao getProductDao() {
+        return new MemoryProductDao();
+    }
 }
