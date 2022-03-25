@@ -3,6 +3,7 @@ package com.example.app.dao.entity;
 
 import com.example.app.controller.model.EventResponse;
 import com.example.app.controller.model.MovieResponse;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -13,7 +14,9 @@ public class Event implements Serializable {
 
     private long id;
     private String title;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate startingDate;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate endingDate;
     private List<User> participants = new ArrayList<>();
     private List<Movie> movies = new ArrayList<>();

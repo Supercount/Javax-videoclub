@@ -13,9 +13,9 @@ public final class DaoFactory {
         return new MemoryMoviesDao();
     }
 
-
     public static EventDao getEventDao() {
         return new MemoryEventDao();
+    }
 
     public static UserDao getUserDao() {
         return new MemoryUserDao();
