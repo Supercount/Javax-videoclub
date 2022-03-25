@@ -1,8 +1,7 @@
-package com.example.app.dao.entity;
+package com.example.app.controller.model;
 
-
-import com.example.app.controller.model.EventResponse;
-import com.example.app.controller.model.MovieResponse;
+import com.example.app.dao.entity.Movie;
+import com.example.app.dao.entity.User;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
@@ -10,7 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Event implements Serializable {
+public class EventResponse implements Serializable {
 
     private long id;
     private String title;
@@ -21,16 +20,7 @@ public class Event implements Serializable {
     private List<User> participants = new ArrayList<>();
     private List<Movie> movies = new ArrayList<>();
 
-    public Event(){}
-
-    public Event(String title, LocalDate startingDate, LocalDate endingDate, List<User> participants, List<Movie> movies) {
-        this.id = id;
-        this.title = title;
-        this.startingDate = startingDate;
-        this.endingDate = endingDate;
-        this.participants = participants;
-        this.movies = movies;
-    }
+    public EventResponse(){}
 
     public long getId() {
         return id;
@@ -78,28 +68,5 @@ public class Event implements Serializable {
 
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
-    }
-
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", startingDate=" + startingDate +
-                ", endingDate=" + endingDate +
-                ", participants=" + participants +
-                ", movies=" + movies +
-                '}';
-    }
-
-    public EventResponse toDto(){
-        EventResponse e = new EventResponse();
-        e.setId(this.id);
-        e.setTitle(this.title);
-        e.setStartingDate(this.startingDate);
-        e.setEndingDate(this.endingDate);
-        e.setMovies(this.movies);
-        e.setParticipants(this.participants);
-        return e;
     }
 }
