@@ -2,14 +2,14 @@ package com.example.app.dao.entity;
 
 import java.time.LocalDate;
 
-public abstract class Person {
+public class User {
 
     private int id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
 
-    public Person(String firstName, String lastName, LocalDate birthDate) {
+    public User(String firstName, String lastName, LocalDate birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
