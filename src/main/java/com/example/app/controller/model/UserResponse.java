@@ -1,12 +1,11 @@
-package com.example.app.dao.entity;
+package com.example.app.controller.model;
 
-import com.example.app.controller.model.UserResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class User implements Serializable {
+public class UserResponse implements Serializable {
 
     private Long id;
     private String firstName;
@@ -18,22 +17,7 @@ public class User implements Serializable {
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate inscriptionDate;
 
-    public User() {
-    }
-
-    public User(String firstName, String lastName, LocalDate birthDate, LocalDate inscriptionDate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.inscriptionDate = inscriptionDate;
-    }
-
-    public User(Long id, String firstName, String lastName, LocalDate birthDate, LocalDate inscriptionDate) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.inscriptionDate = inscriptionDate;
+    public UserResponse() {
     }
 
     public Long getId() {
@@ -74,15 +58,5 @@ public class User implements Serializable {
 
     public void setInscriptionDate(LocalDate inscriptionDate) {
         this.inscriptionDate = inscriptionDate;
-    }
-
-    public UserResponse toDto(){
-        UserResponse u = new UserResponse();
-        u.setId(this.id);
-        u.setFirstName(this.firstName);
-        u.setLastName(this.lastName);
-        u.setBirthDate(this.birthDate);
-        u.setInscriptionDate(this.inscriptionDate);
-        return u;
     }
 }
